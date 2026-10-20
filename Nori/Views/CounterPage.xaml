@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Nori.ViewModels"
+             x:Class="Nori.Views.CounterPage"
+             Title="Счётчик">
+
+    <ContentPage.BindingContext>
+        <viewmodels:CounterViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+
+        <Label Text="{Binding Count}"
+               FontSize="48"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" />
+
+        <Button Text="Увеличить (+1)"
+                Command="{Binding IncrementCommand}"
+                HorizontalOptions="Center"
+                WidthRequest="200" />
+
+        <Button Text="Сбросить"
+                Command="{Binding ResetCommand}"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                BackgroundColor="Orange" />
+
+    </VerticalStackLayout>
+</ContentPage>

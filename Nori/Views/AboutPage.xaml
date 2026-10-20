@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nori.Views.AboutPage"
+             Title="О приложении">
+
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+        <Label Text="Nori"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Label Text="Персональный планировщик с возможностью совместной работы"
+               FontSize="16"
+               HorizontalTextAlignment="Center"
+               TextColor="Gray" />
+
+        <Label Text="Версия 0.1 (учебный проект)"
+               FontSize="14"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0" />
+
+        <Button Text="Назад"
+                Clicked="OnBackClicked"
+                HorizontalOptions="Center"
+                WidthRequest="150"
+                Margin="0,30,0,0" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

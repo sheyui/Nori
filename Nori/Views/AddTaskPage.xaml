@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nori.Views.AddTaskPage"
+             Title="Новая задача">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="18">
+
+            <Label Text="Название" FontAttributes="Bold" />
+            <Entry x:Name="TitleEntry" Placeholder="Что нужно сделать?" />
+
+            <Label Text="Описание" FontAttributes="Bold" />
+            <Editor x:Name="DescriptionEditor"
+                    Placeholder="Дополнительная информация"
+                    HeightRequest="100"
+                    AutoSize="TextChanges" />
+
+            <Label Text="Срок выполнения" FontAttributes="Bold" />
+            <DatePicker x:Name="DueDatePicker"
+            MinimumDate="{Binding Source={x:Static sys:DateTime.Today}}"
+            Date="{Binding Source={x:Static sys:DateTime.Today}}" />
+
+            <Label Text="Приоритет" FontAttributes="Bold" />
+            <Picker x:Name="PriorityPicker" Title="Выберите приоритет">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Низкий</x:String>
+                        <x:String>Обычный</x:String>
+                        <x:String>Высокий</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Сохранить"
+                    Clicked="OnSaveClicked"
+                    Margin="0,25,0,0"
+                    BackgroundColor="#4A90E2"
+                    TextColor="White"
+                    HeightRequest="50" />
+
+            <Button Text="Отмена"
+                    Clicked="OnCancelClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="Gray" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
